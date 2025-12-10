@@ -1,0 +1,9 @@
+# Artifacts directory
+# This directory stores:
+# - IR files (JSON-L format)
+# - Numeric operators (CBOR/MessagePack)
+# - Initial states
+# - Intermediate ψ snapshots
+# - Final certificates
+# - Topology graphs
+

@@ -1,0 +1,30 @@
+FROM nvidia/cuda:12.2.0-devel-ubuntu22.04
+
+WORKDIR /app
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
+    python3 \
+    python3-pip \
+    python3-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+RUN pip3 install pybind11 numpy
+
+# Copy solver source
+COPY solver ./solver
+
+# Build solver
+WORKDIR /app/solver
+RUN mkdir build && cd build && \
+    cmake .. && \
+    make -j$(nproc) && \
+    make install
+
+WORKDIR /app
+
+ENTRYPOINT ["python3"]
+

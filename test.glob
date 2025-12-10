@@ -1,0 +1,12 @@
+DIGEST 96c6cb4bf0183ae66bbb23e60fd61cc9
+Ftest
+R24:37 Stdlib.Arith.PeanoNat <> <> lib
+prf 47:54 <> plus_0_r
+R61:63 Corelib.Init.Datatypes <> nat ind
+binder 57:57 <> n:1
+R73:75 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R69:71 Corelib.Init.Peano <> ::nat_scope:x_'+'_x not
+R68:68 test <> n:1 var
+R76:76 test <> n:1 var
+R92:102 Stdlib.Arith.PeanoNat Nat add_0_r thm
+R92:102 Stdlib.Arith.PeanoNat Nat add_0_r thm

@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apeiron-runtime
+  labels:
+    app: apeiron-runtime
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: apeiron-runtime
+  template:
+    metadata:
+      labels:
+        app: apeiron-runtime
+    spec:
+      containers:
+      - name: runtime
+        image: apeiron/runtime:latest
+        ports:
+        - containerPort: 50051
+          name: grpc
+        env:
+        - name: RUST_LOG
+          value: "info"
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "2000m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apeiron-runtime-service
+spec:
+  selector:
+    app: apeiron-runtime
+  ports:
+  - protocol: TCP
+    port: 50051
+    targetPort: 50051
+  type: LoadBalancer
+

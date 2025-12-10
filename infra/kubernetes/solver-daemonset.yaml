@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: apeiron-solver
+  labels:
+    app: apeiron-solver
+spec:
+  selector:
+    matchLabels:
+      app: apeiron-solver
+  template:
+    metadata:
+      labels:
+        app: apeiron-solver
+    spec:
+      containers:
+      - name: solver
+        image: apeiron/solver:latest
+        resources:
+          requests:
+            nvidia.com/gpu: 1
+            memory: "4Gi"
+            cpu: "2000m"
+          limits:
+            nvidia.com/gpu: 1
+            memory: "8Gi"
+            cpu: "4000m"
+        env:
+        - name: CUDA_VISIBLE_DEVICES
+          value: "0"
+      nodeSelector:
+        accelerator: nvidia-tesla-v100
+

@@ -1,0 +1,73 @@
+# Rust
+target/
+Cargo.lock
+**/*.rs.bk
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+dist/
+build/
+.next/
+out/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# C++/CUDA
+build/
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Artifacts
+artifacts/**/*
+!artifacts/.gitkeep
+
+# Private reference docs (not for repo)
+private_refs/
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# OS
+Thumbs.db
+.DS_Store
+

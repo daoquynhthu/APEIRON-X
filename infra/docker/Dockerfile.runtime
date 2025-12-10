@@ -1,0 +1,34 @@
+FROM rust:1.75-slim as builder
+
+WORKDIR /app
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    pkg-config \
+    libssl-dev \
+    protobuf-compiler \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy workspace files
+COPY Cargo.toml Cargo.lock ./
+COPY runtime ./runtime
+
+# Build runtime
+RUN cargo build --release --package apeiron-runtime
+
+FROM debian:bookworm-slim
+
+WORKDIR /app
+
+# Install runtime dependencies
+RUN apt-get update && apt-get install -y \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy binary
+COPY --from=builder /app/target/release/apeiron-runtime /usr/local/bin/
+
+EXPOSE 50051
+
+ENTRYPOINT ["apeiron-runtime"]
+

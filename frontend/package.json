@@ -1,0 +1,41 @@
+{
+  "name": "apeiron-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "APEIRON-X Frontend - HPM-DL Editor and Visualization",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "^14.0.0",
+    "typescript": "^5.2.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@grpc/grpc-js": "^1.9.0",
+    "@protobufjs/grpc-web": "^1.4.0",
+    "monaco-editor": "^0.44.0",
+    "react-monaco-editor": "^0.55.0",
+    "react-flow-renderer": "^10.3.0",
+    "zustand": "^4.4.0",
+    "axios": "^1.6.0",
+    "recharts": "^2.10.0",
+    "three": "^0.158.0",
+    "@react-three/fiber": "^8.15.0",
+    "@react-three/drei": "^9.88.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "eslint-config-next": "^14.0.0",
+    "@types/node": "^20.10.0",
+    "tailwindcss": "^3.3.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0"
+  }
+}
+

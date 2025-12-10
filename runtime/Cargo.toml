@@ -1,0 +1,39 @@
+[package]
+name = "apeiron-runtime"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+# Workspace dependencies
+tokio.workspace = true
+tokio-stream.workspace = true
+tonic.workspace = true
+tonic-build.workspace = true
+prost.workspace = true
+prost-types.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+s3.workspace = true
+minio.workspace = true
+
+# Runtime-specific dependencies
+async-trait = "0.1"
+dashmap = "5.5"
+parking_lot = "0.12"
+futures = "0.3"
+
+[[bin]]
+name = "apeiron-runtime"
+path = "src/main.rs"
+
+[build-dependencies]
+tonic-build.workspace = true
+
