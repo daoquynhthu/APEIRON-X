@@ -42,6 +42,7 @@ pub struct OperatorSpec {
     pub matrix_representation: Option<MatrixSpec>,
     pub tensor_network: Option<TensorNetworkSpec>,
     pub gpu_kernel: Option<String>,
+    pub raw: Option<String>,
 }
 
 /// Expression types
@@ -62,6 +63,7 @@ pub enum Expression {
         name: String,
         args: Vec<Expression>,
     },
+    Raw(String),
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

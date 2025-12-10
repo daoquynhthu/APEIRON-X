@@ -9,6 +9,12 @@ pub struct SemanticAnalyzer {
     // TODO: Add semantic context
 }
 
+#[derive(Debug, Clone)]
+pub struct ExpandedProgram {
+    pub program: Program,
+    pub expanded_axioms: Vec<Axiom>,
+}
+
 impl SemanticAnalyzer {
     pub fn new() -> Self {
         Self {}
@@ -16,13 +22,11 @@ impl SemanticAnalyzer {
 
     /// Expand inductive axioms
     pub fn expand_axioms(&mut self, program: &Program) -> Result<ExpandedProgram> {
-        // TODO: Implement inductive axiom expansion
-        todo!("Implement semantic analyzer")
+        // 占位实现：不展开，直接返回现有公理
+        Ok(ExpandedProgram {
+            program: program.clone(),
+            expanded_axioms: program.axioms.clone(),
+        })
     }
-}
-
-pub struct ExpandedProgram {
-    pub program: Program,
-    pub expanded_axioms: Vec<Axiom>,
 }
 

@@ -28,7 +28,7 @@ APEIRON-X 可验证任意公理系统在高维物理化空间中的：
 | 超限递归器 | Rust | 高可靠性 |
 | 诊断层 | Rust / Python | 稳定性预言机 |
 | Orchestrator | Rust | 调度、运行时、沙箱 |
-| 前端可视化 | TypeScript + React | Web 界面 |
+| 前端可视化 | TypeScript + React | Web 界面（当前优先 CLI，前端可选后续） |
 | 分布式任务管理 | Kubernetes + Rust | GPU 分配 |
 
 ## 项目结构
